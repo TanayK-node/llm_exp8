@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: experiment7-customer-support-rag
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: RAG_BACKEND
+        value: mock
+      - key: LOG_LEVEL
+        value: INFO
